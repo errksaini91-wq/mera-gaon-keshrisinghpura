@@ -1,71 +1,2018 @@
 <!doctype html>
 <html lang="hi">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#176b3a"><meta name="description" content="केशरीसिंहपुरा गाँव की डिजिटल नागरिक सेवा ऐप">
-<link rel="manifest" href="manifest.json"><title>मेरा गाँव — केशरीसिंहपुरा</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#176b3a">
+<meta name="description" content="केशरीसिंहपुरा गाँव की डिजिटल नागरिक सेवा ऐप">
+<link rel="manifest" href="manifest.json">
+<title>मेरा गाँव — केशरीसिंहपुरा</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;background:#f4f7f4;color:#172018}button,input,textarea,select{font:inherit}button{cursor:pointer}
-header{background:linear-gradient(135deg,#176b3a,#0f512b);color:#fff;padding:24px 16px 30px;border-radius:0 0 26px 26px}.container{max-width:820px;margin:auto;padding:16px}header .container{padding-bottom:0}header h1{margin:0 0 4px;font-size:29px}header p{margin:0;opacity:.92}.village{font-size:13px;margin-top:7px!important}
-nav{position:sticky;top:0;z-index:10;background:#f4f7f4;padding:9px 12px 6px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid #e3e9e3}nav button{width:auto;margin:0 5px 0 0;padding:9px 13px;border:1px solid #d8e2d9;border-radius:999px;background:#fff;color:#176b3a}nav button.active{background:#176b3a;color:#fff;border-color:#176b3a}
-.page{display:none}.page.active{display:block}.section{font-size:20px;margin:20px 0 10px}.notice,.panel,.card{background:#fff;border:1px solid #e1e8e2;border-radius:17px;padding:16px;box-shadow:0 2px 10px #00000009}.notice{background:#fff8df;border-color:#f0e2a9}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.card{min-height:118px}.icon{font-size:27px}.card h3{margin:6px 0 3px;font-size:16px}.muted,.small{color:#69766e;font-size:13px}.btn{width:100%;border:0;border-radius:12px;padding:12px;background:#176b3a;color:#fff;margin-top:9px}.btn.secondary{background:#eef6f0;color:#176b3a}.btn.danger{background:#b42318}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick .btn{margin:0}.item{background:#f9fbf9;border:1px solid #e1e8e2;border-radius:13px;padding:13px;margin:9px 0}.status{display:inline-block;padding:4px 9px;border-radius:99px;background:#fff0c2;font-size:12px}.status.work{background:#dcecff}.status.done{background:#dcfce7}.progress{height:9px;background:#e7ece8;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:#176b3a}.field{margin:10px 0}.field label{display:block;font-size:13px;font-weight:600;margin-bottom:5px}input,textarea,select{width:100%;padding:11px;border:1px solid #d4ded5;border-radius:11px;background:#fff}textarea{min-height:95px;resize:vertical}.hidden{display:none!important}.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#fff;border:1px solid #e1e8e2;border-radius:14px;padding:13px;text-align:center}.stat b{font-size:23px;display:block;color:#176b3a}.photo-preview{max-width:100%;max-height:220px;border-radius:12px;margin-top:8px}.empty{text-align:center;padding:22px;color:#6c786f}.danger-note{background:#fff0ef;border:1px solid #f3c7c3;border-radius:13px;padding:12px;font-size:13px}footer{text-align:center;color:#718078;padding:30px 10px 45px;font-size:13px}
-@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)} }
-</style></head>
-<body>
-<header><div class="container"><h1>🏡 मेरा गाँव</h1><p>गाँव की जानकारी • विकास • सेवाएँ • जनभागीदारी</p><p class="village">केशरीसिंहपुरा • तहसील बसवा • जिला दौसा • राजस्थान • 303313</p></div></header>
-<nav id="nav"><button class="active" data-page="home">🏠 होम</button><button data-page="complaint">📋 समस्या</button><button data-page="development">📊 विकास</button><button data-page="citizen">👤 प्रोफाइल</button><button data-page="admin">🔐 Admin</button></nav>
-<main class="container">
-<section id="home" class="page active">
-<div id="noticeBox" class="notice"><b>📢 आज की सूचना</b><br>गाँव की महत्वपूर्ण घोषणाएँ यहाँ दिखाई जाएँगी।</div>
-<h2 class="section">मुख्य सेवाएँ</h2><div class="grid">
-<div class="card"><div class="icon">🏗️</div><h3>गाँव का विकास</h3><p class="muted">सड़क, पानी, बिजली और विकास कार्य</p></div>
-<div class="card"><div class="icon">👨‍🌾</div><h3>किसान</h3><p class="muted">मौसम, मंडी भाव और योजनाएँ</p></div>
-<div class="card"><div class="icon">🎓</div><h3>शिक्षा</h3><p class="muted">स्कूल और छात्रवृत्ति</p></div>
-<div class="card"><div class="icon">🏥</div><h3>स्वास्थ्य</h3><p class="muted">स्वास्थ्य सेवाएँ व शिविर</p></div>
-<div class="card"><div class="icon">💼</div><h3>रोजगार</h3><p class="muted">नौकरी व कौशल प्रशिक्षण</p></div>
-<div class="card"><div class="icon">🌳</div><h3>पर्यावरण</h3><p class="muted">स्वच्छता, तालाब व पौधारोपण</p></div>
-<div class="card"><div class="icon">🏛️</div><h3>पंचायत</h3><p class="muted">सूचनाएँ और योजनाएँ</p></div>
-<div class="card"><div class="icon">🗺️</div><h3>गाँव का नक्शा</h3><p class="muted">सार्वजनिक स्थान</p></div></div>
-<h2 class="section">🚧 समस्या दर्ज करें</h2><div class="panel"><b>गाँव की कोई समस्या बताइए</b><p class="muted">सड़क, पानी, बिजली, सफाई आदि की शिकायत फोटो और स्थान के साथ भेजें।</p><button class="btn" data-go="complaint">+ समस्या दर्ज करें</button></div>
-<h2 class="section">📊 विकास की स्थिति</h2><div id="homeWorks"></div>
-<h2 class="section">⚡ त्वरित सहायता</h2><div class="quick"><button class="btn" id="emergencyBtn">🚨 आपात सहायता</button><button class="btn secondary" id="panchayatBtn">🏛️ पंचायत संपर्क</button></div>
-</section>
-<section id="complaint" class="page"><h2 class="section">🚧 मेरी समस्या</h2><div class="panel">
-<div class="field"><label>समस्या का प्रकार</label><select id="type"><option>सड़क</option><option>पानी</option><option>बिजली</option><option>सफाई</option><option>स्ट्रीट लाइट</option><option>स्कूल</option><option>स्वास्थ्य</option><option>अन्य</option></select></div>
-<div class="field"><label>समस्या का विवरण</label><textarea id="desc" placeholder="समस्या कहाँ है और क्या समस्या है?"></textarea></div>
-<div class="field"><label>फोटो (वैकल्पिक)</label><input id="photo" type="file" accept="image/*" capture="environment"><img id="photoPreview" class="photo-preview hidden"></div>
-<div class="field"><label>स्थान (वैकल्पिक)</label><button class="btn secondary" id="locationBtn">📍 वर्तमान स्थान जोड़ें</button><div id="locationMsg" class="small"></div></div>
-<button class="btn" id="submitComplaint">शिकायत दर्ज करें</button><div id="created"></div></div>
-<h2 class="section">🔎 शिकायत की स्थिति</h2><div class="panel"><div class="field"><label>शिकायत नंबर</label><input id="searchId" placeholder="जैसे KS-123456"></div><button class="btn" id="trackBtn">स्थिति देखें</button><div id="result"></div></div></section>
-<section id="development" class="page"><h2 class="section">📊 गाँव विकास डैशबोर्ड</h2><div id="devStats"></div><div id="works"></div></section>
-<section id="citizen" class="page"><h2 class="section">👤 नागरिक प्रोफाइल</h2><div class="panel"><div class="field"><label>नाम</label><input id="userName" placeholder="अपना नाम"></div><div class="field"><label>मोबाइल नंबर</label><input id="userMobile" inputmode="numeric" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर"></div><button class="btn" id="saveProfile">प्रोफाइल सेव करें</button><div id="profileMsg"></div></div><div class="panel" style="margin-top:12px"><b>मेरी शिकायतें</b><div id="myComplaints"></div></div></section>
-<section id="admin" class="page"><h2 class="section">🔐 Admin Panel</h2><div id="loginBox" class="panel"><p class="small">यह V2 डेमो है। Demo PIN: <b>1234</b></p><div class="field"><input id="pin" type="password" placeholder="Admin PIN"></div><button class="btn" id="loginBtn">Login</button></div>
-<div id="adminBox" class="hidden"><div id="adminStats"></div><div class="panel" style="margin-top:12px"><b>📋 शिकायतें</b><div id="adminComplaints"></div></div><div class="panel" style="margin-top:12px"><b>📢 घोषणा जोड़ें</b><div class="field"><input id="title" placeholder="शीर्षक"></div><div class="field"><textarea id="detail" placeholder="घोषणा"></textarea></div><button class="btn" id="addNotice">प्रकाशित करें</button></div><div class="panel" style="margin-top:12px"><b>🚧 विकास कार्य जोड़ें</b><div class="field"><input id="workName" placeholder="कार्य का नाम"></div><div class="field"><input id="workProgress" type="number" min="0" max="100" placeholder="प्रगति प्रतिशत"></div><button class="btn" id="addWork">जोड़ें</button></div><div class="danger-note" style="margin-top:12px">⚠️ Production में Admin PIN को server-side secure authentication से बदलना जरूरी है।</div></div></section>
-</main><footer>मेरा गाँव — गाँव के विकास में सबकी भागीदारी<br>V2 • केशरीसिंहपुरा</footer>
-<script>
-const $=id=>document.getElementById(id),get=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},save=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-let complaints=get('mg_complaints',[]), notices=get('mg_notices',[{title:'आज की सूचना',detail:'गाँव की महत्वपूर्ण घोषणाएँ यहाँ दिखाई जाएँगी।'}]), works=get('mg_works',[{name:'मुख्य सड़क',progress:55},{name:'स्ट्रीट लाइट',progress:80},{name:'सफाई व्यवस्था',progress:60}]), profile=get('mg_profile',null), geo=null, photoData='';
-function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});render();}
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>showPage(b.dataset.go));
-$('photo').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{photoData=r.result;$('photoPreview').src=photoData;$('photoPreview').classList.remove('hidden')};r.readAsDataURL(f)};
-$('locationBtn').onclick=()=>{if(!navigator.geolocation)return $('locationMsg').textContent='इस डिवाइस पर location उपलब्ध नहीं है।';$('locationMsg').textContent='स्थान लिया जा रहा है…';navigator.geolocation.getCurrentPosition(p=>{geo={lat:+p.coords.latitude.toFixed(6),lng:+p.coords.longitude.toFixed(6)};$('locationMsg').textContent='📍 स्थान जुड़ गया: '+geo.lat+', '+geo.lng},()=>{$('locationMsg').textContent='स्थान की अनुमति नहीं मिली।'});};
-$('submitComplaint').onclick=()=>{let d=$('desc').value.trim();if(!d)return alert('कृपया समस्या का विवरण लिखें।');let id='KS-'+Math.floor(100000+Math.random()*900000);let c={id,type:$('type').value,desc:d,status:'नई',date:new Date().toLocaleString('hi-IN'),mobile:profile?.mobile||'',photo:photoData,location:geo};complaints.unshift(c);save('mg_complaints',complaints);$('desc').value='';$('photo').value='';$('photoPreview').classList.add('hidden');photoData='';geo=null;$('locationMsg').textContent='';$('created').innerHTML='<div class="notice" style="margin-top:12px"><b>✅ शिकायत दर्ज हो गई</b><br>आपकी शिकायत संख्या: <b>'+id+'</b><br><span class="small">इस नंबर को सुरक्षित रखें।</span></div>';render();};
-$('trackBtn').onclick=()=>{let id=$('searchId').value.trim().toUpperCase(),c=complaints.find(x=>x.id===id);$('result').innerHTML=c?complaintHTML(c,true):'<div class="empty">शिकायत नहीं मिली। नंबर जाँचें।</div>';};
-function complaintHTML(c,detail=false){let st=c.status==='समाधान'?'done':c.status==='कार्यवाही में'?'work':'';return '<div class="item"><b>'+c.id+'</b> • '+c.type+'<br><span class="small">'+c.date+'</span><p>'+esc(c.desc)+'</p><span class="status '+st+'">'+c.status+'</span>'+(detail&&c.location?'<div class="small" style="margin-top:7px">📍 '+c.location.lat+', '+c.location.lng+'</div>':'')+(c.photo?'<br><img class="photo-preview" src="'+c.photo+'">':'')+'</div>'}
-function esc(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
-$('saveProfile').onclick=()=>{let n=$('userName').value.trim(),m=$('userMobile').value.trim();if(!n||!/^[0-9]{10}$/.test(m))return alert('नाम और 10 अंकों का मोबाइल नंबर भरें।');profile={name:n,mobile:m};save('mg_profile',profile);$('profileMsg').innerHTML='<div class="notice" style="margin-top:10px">✅ प्रोफाइल सेव हो गई।</div>';render();};
-$('loginBtn').onclick=()=>{if($('pin').value==='1234'){sessionStorage.setItem('mg_admin','1');$('loginBox').classList.add('hidden');$('adminBox').classList.remove('hidden');render()}else alert('गलत PIN');};
-$('addNotice').onclick=()=>{let t=$('title').value.trim(),d=$('detail').value.trim();if(!t||!d)return alert('शीर्षक और घोषणा भरें।');notices.unshift({title:t,detail:d});save('mg_notices',notices);$('title').value='';$('detail').value='';render();alert('घोषणा प्रकाशित हो गई।');};
-$('addWork').onclick=()=>{let n=$('workName').value.trim(),p=Number($('workProgress').value);if(!n||p<0||p>100)return alert('कार्य और 0-100% प्रगति भरें।');works.unshift({name:n,progress:p});save('mg_works',works);$('workName').value='';$('workProgress').value='';render();};
-function changeStatus(id,val){let c=complaints.find(x=>x.id===id);if(c){c.status=val;save('mg_complaints',complaints);render()}}
-$('emergencyBtn').onclick=()=>alert('आपात स्थिति में स्थानीय आपातकालीन सेवा/112 से संपर्क करें। पंचायत के सत्यापित नंबर Admin द्वारा जोड़े जा सकते हैं।');$('panchayatBtn').onclick=()=>alert('पंचायत संपर्क नंबर Admin Panel में जोड़ने की सुविधा अगली server-connected version में जोड़ी जाएगी।');
-function render(){
-$('noticeBox').innerHTML=notices.slice(0,3).map(n=>'<b>📢 '+esc(n.title)+'</b><br>'+esc(n.detail)).join('<hr style="border:0;border-top:1px solid #eadfb7;margin:10px 0">');
-let workHTML=works.map(w=>'<div class="item"><b>🏗️ '+esc(w.name)+'</b><div class="progress" style="margin-top:8px"><i style="width:'+w.progress+'%"></i></div><div class="small" style="margin-top:5px">'+w.progress+'% कार्य प्रगति</div></div>').join('');$('homeWorks').innerHTML=workHTML;$('works').innerHTML=workHTML||'<div class="empty">अभी कोई विकास कार्य नहीं।</div>';
-$('devStats').innerHTML='<div class="statgrid"><div class="stat"><b>'+works.length+'</b><span class="small">विकास कार्य</span></div><div class="stat"><b>'+complaints.length+'</b><span class="small">शिकायतें</span></div><div class="stat"><b>'+complaints.filter(c=>c.status==='समाधान').length+'</b><span class="small">समाधान</span></div></div>';
-if(profile){$('userName').value=profile.name;$('userMobile').value=profile.mobile;$('myComplaints').innerHTML=complaints.filter(c=>c.mobile===profile.mobile).map(c=>complaintHTML(c)).join('')||'<div class="empty">आपकी कोई शिकायत नहीं मिली।</div>';}else $('myComplaints').innerHTML='<div class="empty">पहले अपनी प्रोफाइल सेव करें।</div>';
-if(sessionStorage.getItem('mg_admin')==='1'){$('loginBox').classList.add('hidden');$('adminBox').classList.remove('hidden');$('adminStats').innerHTML='<div class="statgrid"><div class="stat"><b>'+complaints.length+'</b><span class="small">कुल शिकायतें</span></div><div class="stat"><b>'+complaints.filter(c=>c.status==='नई').length+'</b><span class="small">नई</span></div><div class="stat"><b>'+complaints.filter(c=>c.status==='समाधान').length+'</b><span class="small">समाधान</span></div></div>';$('adminComplaints').innerHTML=complaints.length?complaints.map(c=>'<div class="item"><b>'+c.id+'</b> • '+c.type+'<br>'+esc(c.desc)+'<br><select onchange="changeStatus(\''+c.id+'\',this.value)" style="margin-top:8px"><option '+(c.status==='नई'?'selected':'')+'>नई</option><option '+(c.status==='कार्यवाही में'?'selected':'')+'>कार्यवाही में</option><option '+(c.status==='समाधान'?'selected':'')+'>समाधान</option></select>'+(c.photo?'<br><img class="photo-preview" src="'+c.photo+'">':'')+(c.location?'<div class="small">📍 '+c.location.lat+', '+c.location.lng+'</div>':'')+'</div>').join(''):'<div class="empty">अभी कोई शिकायत नहीं।</div>'}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;background:#f4f7f4;color:#172018}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+
+header{
+background:linear-gradient(135deg,#176b3a,#0f512b);
+color:#fff;
+padding:24px 16px 30px;
+border-radius:0 0 26px 26px
 }
+
+.container{max-width:820px;margin:auto;padding:16px}
+header .container{padding-bottom:0}
+header h1{margin:0 0 4px;font-size:29px}
+header p{margin:0;opacity:.92}
+.village{font-size:13px;margin-top:7px!important}
+
+nav{
+position:sticky;
+top:0;
+z-index:10;
+background:#f4f7f4;
+padding:9px 12px 6px;
+overflow-x:auto;
+white-space:nowrap;
+border-bottom:1px solid #e3e9e3
+}
+
+nav button{
+width:auto;
+margin:0 5px 0 0;
+padding:9px 13px;
+border:1px solid #d8e2d9;
+border-radius:999px;
+background:#fff;
+color:#176b3a
+}
+
+nav button.active{
+background:#176b3a;
+color:#fff;
+border-color:#176b3a
+}
+
+.page{display:none}
+.page.active{display:block}
+
+.section{font-size:20px;margin:20px 0 10px}
+
+.notice,.panel,.card{
+background:#fff;
+border:1px solid #e1e8e2;
+border-radius:17px;
+padding:16px;
+box-shadow:0 2px 10px #00000009
+}
+
+.notice{
+background:#fff8df;
+border-color:#f0e2a9
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:11px
+}
+
+.card{min-height:118px}
+.icon{font-size:27px}
+.card h3{margin:6px 0 3px;font-size:16px}
+.muted,.small{color:#69766e;font-size:13px}
+
+.btn{
+width:100%;
+border:0;
+border-radius:12px;
+padding:12px;
+background:#176b3a;
+color:#fff;
+margin-top:9px
+}
+
+.btn.secondary{
+background:#eef6f0;
+color:#176b3a
+}
+
+.btn.danger{background:#b42318}
+
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px
+}
+
+.quick{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px
+}
+
+.quick .btn{margin:0}
+
+.item{
+background:#f9fbf9;
+border:1px solid #e1e8e2;
+border-radius:13px;
+padding:13px;
+margin:9px 0
+}
+
+.status{
+display:inline-block;
+padding:4px 9px;
+border-radius:99px;
+background:#fff0c2;
+font-size:12px
+}
+
+.status.work{background:#dcecff}
+.status.done{background:#dcfce7}
+
+.progress{
+height:9px;
+background:#e7ece8;
+border-radius:99px;
+overflow:hidden
+}
+
+.progress i{
+display:block;
+height:100%;
+background:#176b3a
+}
+
+.field{margin:10px 0}
+
+.field label{
+display:block;
+font-size:13px;
+font-weight:600;
+margin-bottom:5px
+}
+
+input,textarea,select{
+width:100%;
+padding:11px;
+border:1px solid #d4ded5;
+border-radius:11px;
+background:#fff
+}
+
+textarea{
+min-height:95px;
+resize:vertical
+}
+
+.hidden{display:none!important}
+
+.statgrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:9px
+}
+
+.stat{
+background:#fff;
+border:1px solid #e1e8e2;
+border-radius:14px;
+padding:13px;
+text-align:center
+}
+
+.stat b{
+font-size:23px;
+display:block;
+color:#176b3a
+}
+
+.photo-preview{
+max-width:100%;
+max-height:220px;
+border-radius:12px;
+margin-top:8px
+}
+
+.empty{
+text-align:center;
+padding:22px;
+color:#6c786f
+}
+
+.danger-note{
+background:#fff0ef;
+border:1px solid #f3c7c3;
+border-radius:13px;
+padding:12px;
+font-size:13px
+}
+
+.success-note{
+background:#ecfdf3;
+border:1px solid #b7e4c7;
+border-radius:13px;
+padding:12px;
+font-size:13px
+}
+
+footer{
+text-align:center;
+color:#718078;
+padding:30px 10px 45px;
+font-size:13px
+}
+
+@media(min-width:650px){
+.grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<h1>🏡 मेरा गाँव</h1>
+<p>गाँव की जानकारी • विकास • सेवाएँ • जनभागीदारी</p>
+<p class="village">केशरीसिंहपुरा • तहसील बसवा • जिला दौसा • राजस्थान • 303313</p>
+</div>
+</header>
+
+<nav id="nav">
+<button class="active" data-page="home">🏠 होम</button>
+<button data-page="complaint">📋 समस्या</button>
+<button data-page="development">📊 विकास</button>
+<button data-page="citizen">👤 प्रोफाइल</button>
+<button data-page="admin">🔐 Admin</button>
+</nav>
+
+<main class="container">
+
+<section id="home" class="page active">
+
+<div id="noticeBox" class="notice">
+<b>📢 आज की सूचना</b><br>
+डेटा लोड हो रहा है...
+</div>
+
+<h2 class="section">मुख्य सेवाएँ</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🏗️</div>
+<h3>गाँव का विकास</h3>
+<p class="muted">सड़क, पानी, बिजली और विकास कार्य</p>
+</div>
+
+<div class="card">
+<div class="icon">👨‍🌾</div>
+<h3>किसान</h3>
+<p class="muted">मौसम, मंडी भाव और योजनाएँ</p>
+</div>
+
+<div class="card">
+<div class="icon">🎓</div>
+<h3>शिक्षा</h3>
+<p class="muted">स्कूल और छात्रवृत्ति</p>
+</div>
+
+<div class="card">
+<div class="icon">🏥</div>
+<h3>स्वास्थ्य</h3>
+<p class="muted">स्वास्थ्य सेवाएँ व शिविर</p>
+</div>
+
+<div class="card">
+<div class="icon">💼</div>
+<h3>रोजगार</h3>
+<p class="muted">नौकरी व कौशल प्रशिक्षण</p>
+</div>
+
+<div class="card">
+<div class="icon">🌳</div>
+<h3>पर्यावरण</h3>
+<p class="muted">स्वच्छता, तालाब व पौधारोपण</p>
+</div>
+
+<div class="card">
+<div class="icon">🏛️</div>
+<h3>पंचायत</h3>
+<p class="muted">सूचनाएँ और योजनाएँ</p>
+</div>
+
+<div class="card">
+<div class="icon">🗺️</div>
+<h3>गाँव का नक्शा</h3>
+<p class="muted">सार्वजनिक स्थान</p>
+</div>
+
+</div>
+
+<h2 class="section">🚧 समस्या दर्ज करें</h2>
+
+<div class="panel">
+<b>गाँव की कोई समस्या बताइए</b>
+<p class="muted">
+सड़क, पानी, बिजली, सफाई आदि की शिकायत फोटो और स्थान के साथ भेजें।
+</p>
+<button class="btn" data-go="complaint">+ समस्या दर्ज करें</button>
+</div>
+
+<h2 class="section">📊 विकास की स्थिति</h2>
+
+<div id="homeWorks"></div>
+
+<h2 class="section">⚡ त्वरित सहायता</h2>
+
+<div class="quick">
+<button class="btn" id="emergencyBtn">🚨 आपात सहायता</button>
+<button class="btn secondary" id="panchayatBtn">🏛️ पंचायत संपर्क</button>
+</div>
+
+</section>
+
+
+<section id="complaint" class="page">
+
+<h2 class="section">🚧 मेरी समस्या</h2>
+
+<div class="panel">
+
+<div class="field">
+<label>समस्या का प्रकार</label>
+
+<select id="type">
+<option>सड़क</option>
+<option>पानी</option>
+<option>बिजली</option>
+<option>सफाई</option>
+<option>स्ट्रीट लाइट</option>
+<option>स्कूल</option>
+<option>स्वास्थ्य</option>
+<option>अन्य</option>
+</select>
+</div>
+
+<div class="field">
+<label>समस्या का विवरण</label>
+<textarea id="desc" placeholder="समस्या कहाँ है और क्या समस्या है?"></textarea>
+</div>
+
+<div class="field">
+<label>फोटो (वैकल्पिक)</label>
+<input id="photo" type="file" accept="image/*" capture="environment">
+<img id="photoPreview" class="photo-preview hidden">
+</div>
+
+<div class="field">
+<label>स्थान (वैकल्पिक)</label>
+
+<button class="btn secondary" id="locationBtn">
+📍 वर्तमान स्थान जोड़ें
+</button>
+
+<div id="locationMsg" class="small"></div>
+</div>
+
+<button class="btn" id="submitComplaint">
+शिकायत दर्ज करें
+</button>
+
+<div id="created"></div>
+
+</div>
+
+
+<h2 class="section">🔎 शिकायत की स्थिति</h2>
+
+<div class="panel">
+
+<div class="field">
+<label>शिकायत नंबर</label>
+<input id="searchId" placeholder="जैसे KS-1">
+</div>
+
+<button class="btn" id="trackBtn">
+स्थिति देखें
+</button>
+
+<div id="result"></div>
+
+</div>
+
+</section>
+
+
+<section id="development" class="page">
+
+<h2 class="section">📊 गाँव विकास डैशबोर्ड</h2>
+
+<div id="devStats"></div>
+
+<div id="works"></div>
+
+</section>
+
+
+<section id="citizen" class="page">
+
+<h2 class="section">👤 नागरिक प्रोफाइल</h2>
+
+<div class="panel">
+
+<div class="field">
+<label>नाम</label>
+<input id="userName" placeholder="अपना नाम">
+</div>
+
+<div class="field">
+<label>मोबाइल नंबर</label>
+<input id="userMobile" inputmode="numeric" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर">
+</div>
+
+<button class="btn" id="saveProfile">
+प्रोफाइल सेव करें
+</button>
+
+<div id="profileMsg"></div>
+
+</div>
+
+<div class="panel" style="margin-top:12px">
+
+<b>मेरी शिकायतें</b>
+
+<div id="myComplaints"></div>
+
+</div>
+
+</section>
+
+
+<section id="admin" class="page">
+
+<h2 class="section">🔐 Admin Panel</h2>
+
+<div id="loginBox" class="panel">
+
+<p class="small">
+यह अभी Demo Admin Login है। Demo PIN:
+<b>1234</b>
+</p>
+
+<div class="field">
+<input id="pin" type="password" placeholder="Admin PIN">
+</div>
+
+<button class="btn" id="loginBtn">
+Login
+</button>
+
+</div>
+
+
+<div id="adminBox" class="hidden">
+
+<div id="adminStats"></div>
+
+
+<div class="panel" style="margin-top:12px">
+
+<b>📋 शिकायतें</b>
+
+<div id="adminComplaints"></div>
+
+</div>
+
+
+<div class="panel" style="margin-top:12px">
+
+<b>📢 घोषणा जोड़ें</b>
+
+<div class="field">
+<input id="title" placeholder="शीर्षक">
+</div>
+
+<div class="field">
+<textarea id="detail" placeholder="घोषणा"></textarea>
+</div>
+
+<button class="btn" id="addNotice">
+प्रकाशित करें
+</button>
+
+</div>
+
+
+<div class="panel" style="margin-top:12px">
+
+<b>🚧 विकास कार्य जोड़ें</b>
+
+<div class="field">
+<input id="workName" placeholder="कार्य का नाम">
+</div>
+
+<div class="field">
+<input id="workDescription" placeholder="कार्य का विवरण">
+</div>
+
+<div class="field">
+<input id="workLocation" placeholder="स्थान">
+</div>
+
+<div class="field">
+<input id="workProgress" type="number" min="0" max="100" placeholder="प्रगति प्रतिशत">
+</div>
+
+<button class="btn" id="addWork">
+जोड़ें
+</button>
+
+</div>
+
+
+<div class="danger-note" style="margin-top:12px">
+
+⚠️ अभी Admin में Demo PIN 1234 है।
+Production में इसे Supabase Authentication से सुरक्षित करना जरूरी है।
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+मेरा गाँव — गाँव के विकास में सबकी भागीदारी
+<br>
+V3 • केशरीसिंहपुरा • Supabase
+</footer>
+
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+/* =========================================================
+   SUPABASE CONNECTION
+   ========================================================= */
+
+const SUPABASE_URL =
+'https://doidfynwrffcmmdhomub.supabase.co';
+
+const SUPABASE_KEY =
+'sb_publishable_J2YkfY1tMNc09ol5Ti5z1Q_VIfzIzTX';
+
+const supabaseClient =
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+
+/* =========================================================
+   BASIC HELPERS
+   ========================================================= */
+
+const $ = id => document.getElementById(id);
+
+function localGet(key, defaultValue){
+try{
+return JSON.parse(localStorage.getItem(key)) ?? defaultValue;
+}catch{
+return defaultValue;
+}
+}
+
+function localSave(key,value){
+localStorage.setItem(key,JSON.stringify(value));
+}
+
+function makeUUID(){
+
+if(window.crypto && crypto.randomUUID){
+return crypto.randomUUID();
+}
+
+return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+
+const r=Math.random()*16|0;
+const v=c==='x'?r:(r&0x3|0x8);
+
+return v.toString(16);
+
+});
+
+}
+
+
+/* =========================================================
+   APP DATA
+   ========================================================= */
+
+let complaints = [];
+let notices = [];
+let works = [];
+
+let profile = localGet('mg_profile',null);
+
+let geo = null;
+let photoData = '';
+
+let localAttachments =
+localGet('mg_attachments',{});
+
+let dataError = '';
+
+
+/* =========================================================
+   PAGE NAVIGATION
+   ========================================================= */
+
+function showPage(id){
+
+document.querySelectorAll('.page')
+.forEach(p=>{
+p.classList.toggle('active',p.id===id);
+});
+
+document.querySelectorAll('nav button')
+.forEach(b=>{
+b.classList.toggle('active',b.dataset.page===id);
+});
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
 render();
-if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
-</script></body></html>
+
+}
+
+document.querySelectorAll('nav button')
+.forEach(b=>{
+b.onclick=()=>showPage(b.dataset.page);
+});
+
+document.querySelectorAll('[data-go]')
+.forEach(b=>{
+b.onclick=()=>showPage(b.dataset.go);
+});
+
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
+
+$('photo').onchange=e=>{
+
+const f=e.target.files[0];
+
+if(!f)return;
+
+const reader=new FileReader();
+
+reader.onload=()=>{
+
+photoData=reader.result;
+
+$('photoPreview').src=photoData;
+
+$('photoPreview')
+.classList.remove('hidden');
+
+};
+
+reader.readAsDataURL(f);
+
+};
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+$('locationBtn').onclick=()=>{
+
+if(!navigator.geolocation){
+
+$('locationMsg').textContent =
+'इस डिवाइस पर location उपलब्ध नहीं है।';
+
+return;
+
+}
+
+$('locationMsg').textContent =
+'स्थान लिया जा रहा है…';
+
+navigator.geolocation.getCurrentPosition(
+
+p=>{
+
+geo={
+lat:+p.coords.latitude.toFixed(6),
+lng:+p.coords.longitude.toFixed(6)
+};
+
+$('locationMsg').textContent =
+'📍 स्थान जुड़ गया: '+
+geo.lat+', '+geo.lng;
+
+},
+
+()=>{
+
+$('locationMsg').textContent =
+'स्थान की अनुमति नहीं मिली।';
+
+}
+
+);
+
+};
+
+
+/* =========================================================
+   COMPLAINT ID
+   ========================================================= */
+
+function complaintDisplayId(c){
+
+if(c && c.complaint_number !== undefined &&
+c.complaint_number !== null){
+
+return 'KS-'+c.complaint_number;
+
+}
+
+return c.id || 'KS-UNKNOWN';
+
+}
+
+
+/* =========================================================
+   NORMALIZE DATABASE COMPLAINT
+   ========================================================= */
+
+function normalizeComplaint(row){
+
+const c={
+
+id:row.id,
+
+dbId:row.id,
+
+complaint_number:row.complaint_number,
+
+name:row.name || '',
+
+mobile:row.phone || '',
+
+type:row.category || 'अन्य',
+
+desc:row.description || '',
+
+status:row.status || 'नई',
+
+created_at:row.created_at || '',
+
+date:row.created_at
+?new Date(row.created_at).toLocaleString('hi-IN')
+:'',
+
+photo:'',
+
+location:null
+
+};
+
+const localData =
+localAttachments[complaintDisplayId(c)];
+
+if(localData){
+
+c.photo=localData.photo || '';
+
+c.location=localData.location || null;
+
+}
+
+return c;
+
+}
+
+
+/* =========================================================
+   LOAD DATA FROM SUPABASE
+   ========================================================= */
+
+async function loadData(){
+
+dataError='';
+
+try{
+
+const [
+
+noticeResponse,
+
+workResponse,
+
+complaintResponse
+
+]=await Promise.all([
+
+supabaseClient
+.from('announcements')
+.select('title,message,created_at')
+.order('created_at',{ascending:false}),
+
+supabaseClient
+.from('development_works')
+.select('title,description,location,progress,created_at')
+.order('created_at',{ascending:false}),
+
+supabaseClient
+.from('complaints')
+.select('id,complaint_number,name,phone,category,description,status,created_at')
+.order('created_at',{ascending:false})
+
+]);
+
+
+if(noticeResponse.error)
+throw noticeResponse.error;
+
+if(workResponse.error)
+throw workResponse.error;
+
+if(complaintResponse.error)
+throw complaintResponse.error;
+
+
+/* घोषणाएँ */
+
+notices=(noticeResponse.data || [])
+.map(row=>({
+
+title:row.title || '',
+
+detail:row.message || '',
+
+created_at:row.created_at || ''
+
+}));
+
+
+/* विकास कार्य */
+
+works=(workResponse.data || [])
+.map(row=>({
+
+name:row.title || '',
+
+description:row.description || '',
+
+location:row.location || '',
+
+progress:Number(row.progress || 0),
+
+created_at:row.created_at || ''
+
+}));
+
+
+/* शिकायतें */
+
+complaints=(complaintResponse.data || [])
+.map(normalizeComplaint);
+
+
+/* अगर database में अभी development data नहीं है */
+
+if(!works.length){
+
+works=[
+
+{
+name:'मुख्य सड़क',
+description:'डेमो विकास कार्य',
+location:'केशरीसिंहपुरा',
+progress:55
+},
+
+{
+name:'स्ट्रीट लाइट',
+description:'डेमो विकास कार्य',
+location:'केशरीसिंहपुरा',
+progress:80
+},
+
+{
+name:'सफाई व्यवस्था',
+description:'डेमो विकास कार्य',
+location:'केशरीसिंहपुरा',
+progress:60
+}
+
+];
+
+}
+
+render();
+
+}catch(error){
+
+console.error(error);
+
+dataError=
+'Supabase से डेटा लोड नहीं हो पाया। '+
+(error.message || 'कनेक्शन समस्या');
+
+console.error(
+'Supabase Error:',
+error.message
+);
+
+
+/* अगर Supabase में कोई समस्या हो तो पुराना local data */
+
+complaints=
+localGet('mg_complaints',[]);
+
+notices=
+localGet('mg_notices',[
+{
+title:'आज की सूचना',
+detail:'गाँव की महत्वपूर्ण घोषणाएँ यहाँ दिखाई जाएँगी।'
+}
+]);
+
+works=
+localGet('mg_works',[
+{name:'मुख्य सड़क',progress:55},
+{name:'स्ट्रीट लाइट',progress:80},
+{name:'सफाई व्यवस्था',progress:60}
+]);
+
+render();
+
+}
+
+}
+
+
+/* =========================================================
+   SUBMIT COMPLAINT
+   ========================================================= */
+
+$('submitComplaint').onclick=async()=>{
+
+const description=
+$('desc').value.trim();
+
+if(!description){
+
+alert('कृपया समस्या का विवरण लिखें।');
+
+return;
+
+}
+
+
+const category=$('type').value;
+
+
+/* Supabase में शिकायत */
+
+const payload={
+
+id:makeUUID(),
+
+name:profile?.name || '',
+
+phone:profile?.mobile || '',
+
+category:category,
+
+description:description,
+
+status:'नई'
+
+};
+
+
+$('submitComplaint').disabled=true;
+
+$('submitComplaint').textContent=
+'शिकायत भेजी जा रही है…';
+
+
+try{
+
+const {data,error}=await supabaseClient
+.from('complaints')
+.insert(payload)
+.select('id,complaint_number,name,phone,category,description,status,created_at')
+.single();
+
+
+if(error)
+throw error;
+
+
+const c=normalizeComplaint(data);
+
+
+/* फोटो और location अभी local device पर */
+
+localAttachments[
+complaintDisplayId(c)
+]={
+
+photo:photoData,
+
+location:geo
+
+};
+
+localSave(
+'mg_attachments',
+localAttachments
+);
+
+
+complaints.unshift(c);
+
+
+/* form साफ */
+
+$('desc').value='';
+
+$('photo').value='';
+
+$('photoPreview').classList.add('hidden');
+
+photoData='';
+
+geo=null;
+
+$('locationMsg').textContent='';
+
+
+$('created').innerHTML=
+
+'<div class="success-note" style="margin-top:12px">'+
+
+'<b>✅ शिकायत दर्ज हो गई</b><br>'+
+
+'आपकी शिकायत संख्या: <b>'+
+complaintDisplayId(c)+
+'</b><br>'+
+
+'<span class="small">'+
+'इस नंबर को सुरक्षित रखें।'+
+'</span>'+
+
+'</div>';
+
+
+render();
+
+}catch(error){
+
+console.error(error);
+
+alert(
+'शिकायत दर्ज नहीं हो पाई।\n\n'+
+(error.message || 'Supabase Error')
+);
+
+}finally{
+
+$('submitComplaint').disabled=false;
+
+$('submitComplaint').textContent=
+'शिकायत दर्ज करें';
+
+}
+
+};
+
+
+/* =========================================================
+   TRACK COMPLAINT
+   ========================================================= */
+
+$('trackBtn').onclick=async()=>{
+
+const input=
+$('searchId').value.trim().toUpperCase();
+
+if(!input){
+
+alert('कृपया शिकायत नंबर डालें।');
+
+return;
+
+}
+
+
+/* KS-1 / KS1 दोनों स्वीकार */
+
+const numberText=
+input.replace(/^KS[-\s]?/i,'');
+
+const number=
+Number(numberText);
+
+
+if(!Number.isInteger(number)){
+
+$('result').innerHTML=
+'<div class="empty">शिकायत नंबर सही नहीं है।<br>उदाहरण: KS-1</div>';
+
+return;
+
+}
+
+
+$('trackBtn').disabled=true;
+
+$('trackBtn').textContent='खोज रहे हैं…';
+
+
+try{
+
+const {data,error}=await supabaseClient
+.from('complaints')
+.select('id,complaint_number,name,phone,category,description,status,created_at')
+.eq('complaint_number',number)
+.maybeSingle();
+
+
+if(error)
+throw error;
+
+
+if(!data){
+
+$('result').innerHTML=
+'<div class="empty">शिकायत नहीं मिली। नंबर जाँचें।</div>';
+
+return;
+
+}
+
+
+const c=normalizeComplaint(data);
+
+$('result').innerHTML=
+complaintHTML(c,true);
+
+
+}catch(error){
+
+console.error(error);
+
+$('result').innerHTML=
+'<div class="empty">डेटा प्राप्त नहीं हो पाया।</div>';
+
+}finally{
+
+$('trackBtn').disabled=false;
+
+$('trackBtn').textContent='स्थिति देखें';
+
+}
+
+};
+
+
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
+
+function esc(value){
+
+return String(value ?? '')
+.replace(/[&<>"']/g,m=>({
+
+'&':'&amp;',
+
+'<':'&lt;',
+
+'>':'&gt;',
+
+'"':'&quot;',
+
+"'":'&#039;'
+
+}[m]));
+
+}
+
+
+/* =========================================================
+   COMPLAINT HTML
+   ========================================================= */
+
+function complaintHTML(c,detail=false){
+
+const statusClass=
+c.status==='समाधान'
+?'done'
+:c.status==='कार्यवाही में'
+?'work'
+:'';
+
+
+let html=
+
+'<div class="item">'+
+
+'<b>'+esc(complaintDisplayId(c))+'</b>'+
+' • '+
+esc(c.type)+
+
+'<br>'+
+
+'<span class="small">'+
+esc(c.date || '')+
+'</span>'+
+
+'<p>'+
+esc(c.desc)+
+'</p>'+
+
+'<span class="status '+statusClass+'">'+
+esc(c.status)+
+'</span>';
+
+
+if(detail && c.location){
+
+html+=
+
+'<div class="small" style="margin-top:7px">'+
+
+'📍 '+
+esc(c.location.lat)+
+', '+
+esc(c.location.lng)+
+
+'</div>';
+
+}
+
+
+if(c.photo){
+
+html+=
+'<br><img class="photo-preview" src="'+
+c.photo+
+'">';
+
+}
+
+
+html+='</div>';
+
+return html;
+
+}
+
+
+/* =========================================================
+   PROFILE SAVE
+   ========================================================= */
+
+$('saveProfile').onclick=async()=>{
+
+const name=
+$('userName').value.trim();
+
+const mobile=
+$('userMobile').value.trim();
+
+
+if(
+!name ||
+!/^[0-9]{10}$/.test(mobile)
+){
+
+alert(
+'नाम और 10 अंकों का मोबाइल नंबर भरें।'
+);
+
+return;
+
+}
+
+
+profile={
+
+id:profile?.id || makeUUID(),
+
+name:name,
+
+mobile:mobile
+
+};
+
+
+/* मोबाइल में local profile */
+
+localSave(
+'mg_profile',
+profile
+);
+
+
+try{
+
+/* Supabase profile */
+
+const {error}=await supabaseClient
+.from('profiles')
+.upsert({
+
+id:profile.id,
+
+full_name:name,
+
+phone:mobile,
+
+role:'citizen'
+
+});
+
+
+if(error)
+throw error;
+
+
+$('profileMsg').innerHTML=
+
+'<div class="success-note" style="margin-top:10px">'+
+'✅ प्रोफाइल Supabase में सेव हो गई।'+
+'</div>';
+
+
+}catch(error){
+
+console.error(error);
+
+$('profileMsg').innerHTML=
+
+'<div class="danger-note" style="margin-top:10px">'+
+'⚠️ प्रोफाइल मोबाइल में सेव है, लेकिन Supabase में सेव नहीं हो पाई।<br>'+
+'<span class="small">'+
+esc(error.message || '')+
+'</span>'+
+'</div>';
+
+}
+
+
+render();
+
+};
+
+
+/* =========================================================
+   ADMIN LOGIN
+   ========================================================= */
+
+$('loginBtn').onclick=()=>{
+
+if($('pin').value==='1234'){
+
+sessionStorage.setItem(
+'mg_admin',
+'1'
+);
+
+$('loginBox').classList.add('hidden');
+
+$('adminBox').classList.remove('hidden');
+
+render();
+
+}else{
+
+alert('गलत PIN');
+
+}
+
+};
+
+
+/* =========================================================
+   ADD ANNOUNCEMENT
+   ========================================================= */
+
+$('addNotice').onclick=async()=>{
+
+const title=
+$('title').value.trim();
+
+const detail=
+$('detail').value.trim();
+
+
+if(!title || !detail){
+
+alert(
+'शीर्षक और घोषणा भरें।'
+);
+
+return;
+
+}
+
+
+$('addNotice').disabled=true;
+
+$('addNotice').textContent=
+'प्रकाशित हो रहा है…';
+
+
+try{
+
+const {error}=await supabaseClient
+.from('announcements')
+.insert({
+
+title:title,
+
+message:detail
+
+});
+
+
+if(error)
+throw error;
+
+
+$('title').value='';
+
+$('detail').value='';
+
+
+await loadData();
+
+alert(
+'घोषणा प्रकाशित हो गई।'
+);
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+'घोषणा प्रकाशित नहीं हुई।\n\n'+
+(error.message || '')
+);
+
+}finally{
+
+$('addNotice').disabled=false;
+
+$('addNotice').textContent=
+'प्रकाशित करें';
+
+}
+
+};
+
+
+/* =========================================================
+   ADD DEVELOPMENT WORK
+   ========================================================= */
+
+$('addWork').onclick=async()=>{
+
+const name=
+$('workName').value.trim();
+
+const description=
+$('workDescription').value.trim();
+
+const location=
+$('workLocation').value.trim();
+
+const progress=
+Number($('workProgress').value);
+
+
+if(
+!name ||
+progress<0 ||
+progress>100
+){
+
+alert(
+'कार्य और 0-100% प्रगति भरें।'
+);
+
+return;
+
+}
+
+
+$('addWork').disabled=true;
+
+$('addWork').textContent=
+'जोड़ रहे हैं…';
+
+
+try{
+
+const {error}=await supabaseClient
+.from('development_works')
+.insert({
+
+title:name,
+
+description:description,
+
+location:location,
+
+progress:progress
+
+});
+
+
+if(error)
+throw error;
+
+
+$('workName').value='';
+
+$('workDescription').value='';
+
+$('workLocation').value='';
+
+$('workProgress').value='';
+
+
+await loadData();
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+'विकास कार्य नहीं जुड़ा।\n\n'+
+(error.message || '')
+);
+
+}finally{
+
+$('addWork').disabled=false;
+
+$('addWork').textContent='जोड़ें';
+
+}
+
+};
+
+
+/* =========================================================
+   CHANGE COMPLAINT STATUS
+   ========================================================= */
+
+async function changeStatus(id,val){
+
+const complaint=
+complaints.find(c=>
+String(c.dbId || c.id)===String(id)
+);
+
+
+if(!complaint)
+return;
+
+
+try{
+
+const {error}=await supabaseClient
+.from('complaints')
+.update({
+
+status:val
+
+})
+.eq('id',complaint.dbId || complaint.id);
+
+
+if(error)
+throw error;
+
+
+complaint.status=val;
+
+render();
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+'स्थिति अपडेट नहीं हुई।\n\n'+
+(error.message || '')
+);
+
+}
+
+}
+
+
+/* =========================================================
+   EMERGENCY / PANCHAYAT
+   ========================================================= */
+
+$('emergencyBtn').onclick=()=>{
+
+alert(
+'आपात स्थिति में स्थानीय आपातकालीन सेवा / 112 से संपर्क करें।'
+);
+
+};
+
+
+$('panchayatBtn').onclick=()=>{
+
+alert(
+'पंचायत संपर्क नंबर Admin Panel में जोड़े जा सकते हैं।'
+);
+
+};
+
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+
+function render(){
+
+
+/* घोषणाएँ */
+
+let noticeHTML='';
+
+
+if(dataError){
+
+noticeHTML+=
+
+'<div class="danger-note" style="margin-bottom:10px">'+
+'⚠️ '+esc(dataError)+
+'</div>';
+
+}
+
+
+if(notices.length){
+
+noticeHTML+=
+
+notices
+.slice(0,3)
+.map(n=>
+
+'<b>📢 '+
+esc(n.title)+
+'</b><br>'+
+esc(n.detail)
+
+)
+.join(
+'<hr style="border:0;border-top:1px solid #eadfb7;margin:10px 0">'
+);
+
+}else{
+
+noticeHTML+=
+
+'<b>📢 आज की सूचना</b><br>'+
+'अभी कोई नई घोषणा नहीं है।';
+
+}
+
+
+$('noticeBox').innerHTML=
+noticeHTML;
+
+
+/* विकास कार्य */
+
+const workHTML=
+
+works.map(w=>
+
+'<div class="item">'+
+
+'<b>🏗️ '+
+esc(w.name)+
+'</b>'+
+
+(w.location
+?
+'<div class="small">📍 '+
+esc(w.location)+
+'</div>'
+:'')+
+
+(w.description
+?
+'<div class="small" style="margin-top:4px">'+
+esc(w.description)+
+'</div>'
+:'')+
+
+'<div class="progress" style="margin-top:8px">'+
+
+'<i style="width:'+
+Math.max(0,Math.min(100,Number(w.progress)||0))+
+'%"></i>'+
+
+'</div>'+
+
+'<div class="small" style="margin-top:5px">'+
+
+Number(w.progress||0)+
+'% कार्य प्रगति'+
+
+'</div>'+
+
+'</div>'
+
+).join('');
+
+
+$('homeWorks').innerHTML=
+workHTML ||
+'<div class="empty">अभी कोई विकास कार्य नहीं।</div>';
+
+
+$('works').innerHTML=
+workHTML ||
+'<div class="empty">अभी कोई विकास कार्य नहीं।</div>';
+
+
+/* Development stats */
+
+$('devStats').innerHTML=
+
+'<div class="statgrid">'+
+
+'<div class="stat">'+
+'<b>'+works.length+'</b>'+
+'<span class="small">विकास कार्य</span>'+
+'</div>'+
+
+'<div class="stat">'+
+'<b>'+complaints.length+'</b>'+
+'<span class="small">शिकायतें</span>'+
+'</div>'+
+
+'<div class="stat">'+
+'<b>'+
+complaints.filter(
+c=>c.status==='समाधान'
+).length+
+'</b>'+
+'<span class="small">समाधान</span>'+
+'</div>'+
+
+'</div>';
+
+
+/* Profile */
+
+if(profile){
+
+$('userName').value=
+profile.name || '';
+
+$('userMobile').value=
+profile.mobile || '';
+
+
+const my=
+
+complaints.filter(
+c=>c.mobile===profile.mobile
+);
+
+
+$('myComplaints').innerHTML=
+
+my.map(c=>
+complaintHTML(c)
+).join('') ||
+
+'<div class="empty">'+
+'आपकी कोई शिकायत नहीं मिली।'+
+'</div>';
+
+}else{
+
+$('myComplaints').innerHTML=
+
+'<div class="empty">'+
+'पहले अपनी प्रोफाइल सेव करें।'+
+'</div>';
+
+}
+
+
+/* Admin */
+
+if(
+sessionStorage.getItem('mg_admin')==='1'
+){
+
+$('loginBox').classList.add('hidden');
+
+$('adminBox').classList.remove('hidden');
+
+
+$('adminStats').innerHTML=
+
+'<div class="statgrid">'+
+
+'<div class="stat">'+
+'<b>'+complaints.length+'</b>'+
+'<span class="small">कुल शिकायतें</span>'+
+'</div>'+
+
+'<div class="stat">'+
+'<b>'+
+complaints.filter(
+c=>c.status==='नई'
+).length+
+'</b>'+
+'<span class="small">नई</span>'+
+'</div>'+
+
+'<div class="stat">'+
+'<b>'+
+complaints.filter(
+c=>c.status==='समाधान'
+).length+
+'</b>'+
+'<span class="small">समाधान</span>'+
+'</div>'+
+
+'</div>';
+
+
+if(complaints.length){
+
+$('adminComplaints').innerHTML=
+
+complaints.map(c=>{
+
+const selectedNew=
+c.status==='नई'
+?'selected'
+:'';
+
+const selectedWork=
+c.status==='कार्यवाही में'
+?'selected'
+:'';
+
+const selectedDone=
+c.status==='समाधान'
+?'selected'
+:'';
+
+return
+
+'<div class="item">'+
+
+'<b>'+
+esc(complaintDisplayId(c))+
+'</b>'+
+' • '+
+esc(c.type)+
+
+'<br>'+
+
+'<span class="small">'+
+esc(c.date || '')+
+'</span>'+
+
+'<br>'+
+esc(c.desc)+
+
+'<br>'+
+
+'<select class="statusSelect" data-id="'+
+esc(c.dbId || c.id)+
+'" style="margin-top:8px">'+
+
+'<option value="नई" '+selectedNew+'>नई</option>'+
+
+'<option value="कार्यवाही में" '+selectedWork+'>कार्यवाही में</option>'+
+
+'<option value="समाधान" '+selectedDone+'>समाधान</option>'+
+
+'</select>'+
+
+(c.photo
+?
+'<br><img class="photo-preview" src="'+
+c.photo+
+'">'
+:'')+
+
+(c.location
+?
+'<div class="small">📍 '+
+esc(c.location.lat)+
+', '+
+esc(c.location.lng)+
+'</div>'
+:'')+
+
+'</div>';
+
+}).join('');
+
+}else{
+
+$('adminComplaints').innerHTML=
+
+'<div class="empty">'+
+'अभी कोई शिकायत नहीं।'+
+'</div>';
+
+}
+
+
+/* Status dropdown events */
+
+document
+.querySelectorAll('.statusSelect')
+.forEach(select=>{
+
+select.onchange=()=>{
+
+changeStatus(
+select.dataset.id,
+select.value
+);
+
+};
+
+});
+
+}
+
+}
+
+
+/* =========================================================
+   START APP
+   ========================================================= */
+
+render();
+
+loadData();
+
+
+/* =========================================================
+   SERVICE WORKER
+   ========================================================= */
+
+if('serviceWorker' in navigator){
+
+navigator.serviceWorker
+.register('sw.js')
+.catch(()=>{});
+
+}
+
+</script>
+
+</body>
+</html>
