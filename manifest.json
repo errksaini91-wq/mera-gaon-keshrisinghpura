@@ -1,1 +1,10 @@
-{"name":"मेरा गाँव — केशरीसिंहपुरा","short_name":"मेरा गाँव","start_url":"./index.html","display":"standalone","background_color":"#f4f7f4","theme_color":"#176b3a","lang":"hi","icons":[]}
+{
+  "name": "मेरा गाँव — केशरीसिंहपुरा",
+  "short_name": "मेरा गाँव",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#176b3a",
+  "orientation": "portrait",
+  "lang": "hi-IN"
+}
